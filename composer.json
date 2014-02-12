@@ -14,9 +14,6 @@
         "mixpanel/mixpanel-php" : "2.*"
     },
     "autoload": {
-        "classmap": [
-            "src/migrations"
-        ],
         "psr-0": {
             "Timothylhuillier\\LaravelMixpanel\\": "src/"
         }
