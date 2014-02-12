@@ -33,7 +33,7 @@ class LaravelMixpanelServiceProvider extends ServiceProvider {
             /* recupère le token dans le fichier de config 'mixpanel.php'
              * s'il n'existe pas $token = null (parfait pour l'env. local)
              */
-            $token = \Config::get('mixpanel.token');
+            $token = \Config::get('laravel-mixpanel::token');
 
             return \Mixpanel::getInstance($token);
         });
