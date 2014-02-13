@@ -1,6 +1,7 @@
 <?php namespace Timothylhuillier\LaravelMixpanel;
 
 use Illuminate\Support\ServiceProvider;
+use Config;
 
 class LaravelMixpanelServiceProvider extends ServiceProvider {
 
@@ -33,9 +34,9 @@ class LaravelMixpanelServiceProvider extends ServiceProvider {
             /* recupère le token dans le fichier de config 'mixpanel.php'
              * s'il n'existe pas $token = null (parfait pour l'env. local)
              */
-            $token = \Config::get('laravel-mixpanel::token');
+            $token = Config::get('laravel-mixpanel::token');
 
-            return \Mixpanel::getInstance($token);
+            return new LaravelMixpanel($token);
         });
 	}
 
