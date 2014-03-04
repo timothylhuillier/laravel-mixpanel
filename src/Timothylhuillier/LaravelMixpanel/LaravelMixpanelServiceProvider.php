@@ -31,10 +31,17 @@ class LaravelMixpanelServiceProvider extends ServiceProvider {
 	{
         $this->app->singleton('mixpanel', function() {
 
-            /* recupère le token dans le fichier de config 'mixpanel.php'
-             * s'il n'existe pas $token = null (parfait pour l'env. local)
-             */
-            $token = Config::get('laravel-mixpanel::token');
+            // inactive mixpanel de base pour ne pas tracker les bot
+            $token = null;
+
+            // si ce n'est pas un bot on initialise mixpanel
+            if(!preg_match('/(bot|spider|yahoo|facebook|newrelic)/i', Request::header('User-Agent'))){
+
+                /* recupère le token dans le fichier de config 'mixpanel.php'
+                 * s'il n'existe pas $token = null (parfait pour l'env. local)
+                 */
+                $token = Config::get('laravel-mixpanel::token');
+            }
 
             return new LaravelMixpanel($token);
         });
