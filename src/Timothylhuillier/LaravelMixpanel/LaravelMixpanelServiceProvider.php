@@ -2,6 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 use Config;
+use Request;
 
 class LaravelMixpanelServiceProvider extends ServiceProvider {
 
