@@ -36,7 +36,7 @@ class LaravelMixpanelServiceProvider extends ServiceProvider {
             $token = null;
 
             // si ce n'est pas un bot on initialise mixpanel
-            if(!preg_match('/(bot|spider|yahoo|facebook|newrelic)/i', Request::header('User-Agent'))){
+            if(!preg_match('/(bot|spider|yahoo|facebook|newrelic|crawler|catexplorador)/i', Request::header('User-Agent'))){
 
                 /* recupère le token dans le fichier de config 'mixpanel.php'
                  * s'il n'existe pas $token = null (parfait pour l'env. local)
