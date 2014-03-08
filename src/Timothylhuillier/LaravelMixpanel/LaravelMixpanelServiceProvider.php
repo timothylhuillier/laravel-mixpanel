@@ -38,10 +38,14 @@ class LaravelMixpanelServiceProvider extends ServiceProvider {
             // si ce n'est pas un bot on initialise mixpanel
             if(!preg_match('/(bot|spider|yahoo|facebook|newrelic|crawler|catexplorador)/i', Request::header('User-Agent'))){
 
-                /* recupère le token dans le fichier de config 'mixpanel.php'
-                 * s'il n'existe pas $token = null (parfait pour l'env. local)
-                 */
-                $token = Config::get('laravel-mixpanel::token');
+                // Permet d'ignorer des personnes au tracks
+                if(in_array(Config::get('laravel-mixpanel::ignoredValue'), Config::get('laravel-mixpanel::ignoredList'))){
+
+                    /* recupère le token dans le fichier de config 'mixpanel.php'
+                     * s'il n'existe pas $token = null (parfait pour l'env. local)
+                     */
+                    $token = Config::get('laravel-mixpanel::token');
+                }
             }
 
             return new LaravelMixpanel($token);
