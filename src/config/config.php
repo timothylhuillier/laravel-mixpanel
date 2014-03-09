@@ -17,5 +17,9 @@ return [
      */
     'ignoredList' => array(),
 
-    'ignoredValue' => Auth::user()->email
+
+    /* ex. return email of user authentificated
+     * (Auth::check()) ? Auth::user()->email : null
+     */
+    'ignoredValue' => null
 ];
