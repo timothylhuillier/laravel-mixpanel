@@ -39,7 +39,7 @@ class LaravelMixpanelServiceProvider extends ServiceProvider {
             if(!preg_match('/('.Config::get('laravel-mixpanel::userAgent').')/i', Request::header('User-Agent'))){
 
                 // Permet d'ignorer des personnes au tracks
-                if(in_array(Config::get('laravel-mixpanel::ignoredValue'), Config::get('laravel-mixpanel::ignoredList'))){
+                if(!in_array(Config::get('laravel-mixpanel::ignoredValue'), Config::get('laravel-mixpanel::ignoredList'))){
 
                     /* recupère le token dans le fichier de config 'mixpanel.php'
                      * s'il n'existe pas $token = null (parfait pour l'env. local)
