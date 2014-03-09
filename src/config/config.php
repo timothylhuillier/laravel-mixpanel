@@ -19,7 +19,7 @@ return [
 
 
     /* ex. return email of user authentificated
-     * (Auth::check()) ? Auth::user()->email : null
+     * (Auth::check()) ? Auth::user()->email : mustNotToBeEmpty
      */
-    'ignoredValue' => null
+    'ignoredValue' => 'mustNotToBeEmpty'
 ];
