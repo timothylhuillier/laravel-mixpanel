@@ -10,8 +10,9 @@ Then in terminal : `php artisan config:publish timothylhuillier/laravel-mixpanel
 Now, to use this package, there is 2 solutions :
 - You can use 'LaravelMixpanel::', ie. `LaravelMixpanel::track('Homepage View', ['connected' => false])`
 
-But with this solution, mixpanel people is unavailable. So, i create `getInstance()`.
-- The second solution is used `$mixpanel = LaravelMixpanel::getInstance();`
+But with this solution, mixpanel people is unavailable. Then, I created `getInstance()`.
+
+- The second solution is to use `$mixpanel = LaravelMixpanel::getInstance();`
 
 For example :
 
