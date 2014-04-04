@@ -5,6 +5,8 @@ In `config.php` add `Timothylhuillier\LaravelMixpanel\LaravelMixpanelServiceProv
 
 Then in terminal : `php artisan config:publish timothylhuillier/laravel-mixpanel` and add your token in `app/config/package/timothylhuillier/laravel-mixpanel/config.php`
 
+In the config package the regex `'userAgent' => '^Mozilla((?!bot).)*$'` skips all bot.
+
 -----------
 
 Now, to use this package, there is 2 solutions :
