@@ -9,8 +9,8 @@ return [
     /** Many Rules for ignored peoples and bots **/
     /********************************************/
 
-    // userAgent ignored (ex. bot) whit regex (preg_match)
-    'userAgent' => 'bot|spider|yahoo|facebook|crawler',
+    // userAgent ignored (here with example it ignore all bot ;))
+    'userAgent' => '^Mozilla((?!bot).)*$',
 
     /* list of users who were ignored for track
      * (ex. list of emails)

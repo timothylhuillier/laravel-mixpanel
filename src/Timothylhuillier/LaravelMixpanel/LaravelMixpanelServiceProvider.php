@@ -36,7 +36,7 @@ class LaravelMixpanelServiceProvider extends ServiceProvider {
             $token = null;
 
             // si ce n'est pas un bot et si ce n'est pas une personne à ignorer,on initialise mixpanel
-            if(!preg_match('/('.Config::get('laravel-mixpanel::userAgent').')/i', Request::header('User-Agent'))
+            if(preg_match('/('.Config::get('laravel-mixpanel::userAgent').')/', Request::header('User-Agent'))
                 AND
                 !in_array(Config::get('laravel-mixpanel::ignoredValue'), Config::get('laravel-mixpanel::ignoredList'))
             ){
