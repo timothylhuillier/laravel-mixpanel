@@ -33,7 +33,7 @@ class LaravelMixpanel extends Mixpanel {
      * @param array $options
      * @return LaravelMixpanel
      */
-    public static function getInstance($token = false, array $options = array())
+    public static function getInstance($token = false, $options = array())
     {
         if (!$token) {
             $token = Config::get('laravel-mixpanel::token');
